@@ -2,7 +2,7 @@ import React from 'react';
 import {
 	BrowserRouter as Router,
 	Route,
-	Link
+	NavLink
 } from 'react-router-dom';
 
 import './App.css';
@@ -14,9 +14,9 @@ const Home = (props) => {
 
 const Links = () => (
 	<nav>
-		<Link to="/">Home</Link>{' '}
-		<Link to={{pathname: '/about'}}>About</Link>{' '}
-		<Link to="/contact">Contact</Link>{' '}
+		<NavLink to="/">Home</NavLink>{' '}
+		<NavLink to={{pathname: '/about'}}>About</NavLink>{' '}
+		<NavLink replace to="/contact">Contact</NavLink>{' '}
 	</nav>
 );
 
