@@ -3,13 +3,29 @@ import {
 	BrowserRouter as Router,
 	Route,
 	Link,
+	Prompt,
 } from 'react-router-dom';
 
 import './App.css';
 
 const Home = () => (<h1>Home</h1>);
-const Form = () => (<h1>Form</h1>);
 
+class Form extends React.Component {
+	state = {dirty: false};
+	setDirty = () => {this.setState({dirty: true})};
+	render() {
+		return (
+			<div>
+				<h1>Form</h1>
+				<input type="text" onInput={this.setDirty}/>
+				<Prompt
+					when={this.state.dirty}
+					message="Data will be lost!"
+				/>
+			</div>
+		);
+	}
+}
 
 const Links = () => (
 	<nav>
