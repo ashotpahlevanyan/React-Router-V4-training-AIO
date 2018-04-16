@@ -2,6 +2,7 @@ import React from 'react';
 import {
 	BrowserRouter,
 	HashRouter,
+	MemoryRouter,
 	Route,
 	Link,
 } from 'react-router-dom';
@@ -34,4 +35,10 @@ const HashRouterApp = () => (
 	</HashRouter>
 );
 
-export default HashRouterApp;
+const MemoryRouterApp = () => (
+	<MemoryRouter>
+		<LinksRoutes />
+	</MemoryRouter>
+);
+
+export default MemoryRouterApp;
