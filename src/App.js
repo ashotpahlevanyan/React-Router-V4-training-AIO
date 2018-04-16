@@ -4,6 +4,7 @@ import {
 	HashRouter,
 	MemoryRouter,
 	StaticRouter,
+	NativeRouter,
 	Route,
 	Link,
 } from 'react-router-dom';
