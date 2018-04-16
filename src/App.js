@@ -12,11 +12,19 @@ const Home = (props) => {
 	return <h1>Home</h1>;
 };
 
+const isActiveFunc = (match, location) => {
+	console.log(match, location);
+	return match;
+};
+
 const Links = () => (
 	<nav>
-		<NavLink to="/">Home</NavLink>{' '}
-		<NavLink to={{pathname: '/about'}}>About</NavLink>{' '}
-		<NavLink replace to="/contact">Contact</NavLink>{' '}
+		<NavLink exact activeClassName="active" to="/">Home</NavLink>
+		<NavLink activeStyle={{color: 'green'}} to={{pathname: "/about"}}>About</NavLink>
+		<NavLink
+			isActive={isActiveFunc}
+			activeClassName="active"
+			to="/contact">Contact</NavLink>
 	</nav>
 );
 
