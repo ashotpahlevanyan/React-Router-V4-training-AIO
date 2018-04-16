@@ -16,8 +16,13 @@ const LinksRoutes = () => (
 	</div>
 );
 
+const forceRefresh = () => {
+	console.log(new Date());
+	return false;
+};
+
 const BrowserRouterApp = () => (
-	<BrowserRouter>
+	<BrowserRouter forceRefresh={forceRefresh()}>
 		<LinksRoutes />
 	</BrowserRouter>
 );
