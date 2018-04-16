@@ -15,10 +15,10 @@ const Home = (props) => {
 const App = () => (
 	<Router>
 		<div>
-			<Route exact path="/:page?/:subpage?" render={({match}) => (
+			<Route exact path="/:a(\d{2}-\d{2}-\d{4}):b(\.[a-z]+)" render={({match}) => (
 				<h1>
-					PAGE: {match.params.page} <br />
-					SUBPAGE: {match.params.subpage}
+					paramA: {match.params.a} <br />
+					paramB: {match.params.b}
 				</h1>
 			)}/>
 
