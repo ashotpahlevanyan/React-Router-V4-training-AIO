@@ -29,7 +29,7 @@ const BrowserRouterApp = () => (
 );
 
 const HashRouterApp = () => (
-	<HashRouter hashType='slash'>
+	<HashRouter hashType='noslash'>
 		<LinksRoutes />
 	</HashRouter>
 );
