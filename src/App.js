@@ -2,7 +2,8 @@ import React from 'react';
 import {
 	BrowserRouter as Router,
 	Route,
-	Link
+	Link,
+	Switch,
 } from 'react-router-dom';
 
 import './App.css';
@@ -14,28 +15,31 @@ const Home = (props) => {
 
 const Links = () => (
 	<nav>
-		<Link to="/?id=123">Inline</Link>
-		<Link to={{pathname: '/', search: 'id=456'}}>Object</Link>
-
+		<Link to="/">Home</Link>
+		<Link to="/about">About</Link>
+		<Link to="/contact">Contact</Link>
 	</nav>
 );
 
-const App = (props) => (
-	<Router>
-		<div>
-			<Links />
-			<Route path="/" render={({match, location}) => (
+class App extends React.Component {
+	render() {
+		return(
+			<Router>
 				<div>
-					<p>Root</p>
-					<p>{JSON.stringify(match)}</p>
-					<p>{JSON.stringify(location)}</p>
-					<p>{new URLSearchParams(location.search).get('id')}</p>
+					<Links />
+					<Switch>
+						<Route exact path="/" render={() => <h1>Home</h1>} />
+						<Route path="/about" render={() => <h1>About</h1>} />
+						<Route path="/contact" render={() => <h1>Contact</h1>} />
+						<Route
+							path="/:itemId"
+							render={({match}) => (<h1>Item: {match.params.itemId}</h1>)} />
+					</Switch>
 				</div>
-			)}/>
-
-		</div>
-	</Router>
-);
+			</Router>
+		);
+	}
+}
 
 
 export default App;
