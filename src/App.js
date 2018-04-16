@@ -3,6 +3,7 @@ import {
 	BrowserRouter,
 	HashRouter,
 	MemoryRouter,
+	StaticRouter,
 	Route,
 	Link,
 } from 'react-router-dom';
@@ -44,4 +45,10 @@ const MemoryRouterApp = () => (
 	</MemoryRouter>
 );
 
-export default MemoryRouterApp;
+const StaticRouterApp = () => (
+	<StaticRouter location="/about" context={{}}>
+		<LinksRoutes />
+	</StaticRouter>
+);
+
+export default StaticRouterApp;
