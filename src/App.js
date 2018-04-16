@@ -36,7 +36,10 @@ const HashRouterApp = () => (
 );
 
 const MemoryRouterApp = () => (
-	<MemoryRouter>
+	<MemoryRouter
+		initialEntries={['/', '/about']}
+		initialIndex={1}
+	>
 		<LinksRoutes />
 	</MemoryRouter>
 );
